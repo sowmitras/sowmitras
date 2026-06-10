@@ -5,24 +5,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&display=swap');
 
 /* ── Reset & Base ── */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-:root {
-  --navy-deep:    #050F1C;
-  --navy-base:    #091523;
-  --navy-card:    #0C1E30;
-  --navy-border:  #1A3352;
-  --navy-muted:   #1F3F5F;
-  --gold-primary: #C9A84C;
-  --gold-light:   #E8D5A3;
-  --gold-dim:     #8A6E2F;
-  --text-primary: #EEF3F8;
-  --text-secondary:#A8C0D8;
-  --text-muted:   #607D96;
-  --white:        #ffffff;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-html { scroll-behavior: smooth; }
+:root {
+  --navy-deep: #050F1C;
+  --navy-base: #091523;
+  --navy-card: #0C1E30;
+  --navy-border: #1A3352;
+  --navy-muted: #1F3F5F;
+  --gold-primary: #C9A84C;
+  --gold-light: #E8D5A3;
+  --gold-dim: #8A6E2F;
+  --text-primary: #EEF3F8;
+  --text-secondary: #A8C0D8;
+  --text-muted: #607D96;
+  --white: #ffffff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   font-family: 'Sora', sans-serif;
@@ -37,7 +45,7 @@ body {
 .page-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 32px;
+  /* padding: 0 32px; */
 }
 
 /* ── HERO ── */
@@ -56,8 +64,8 @@ body {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 70% 60% at 50% 0%, rgba(201,168,76,0.10) 0%, transparent 70%),
-    radial-gradient(ellipse 100% 80% at 50% 100%, rgba(9,21,35,0.6) 0%, transparent 100%);
+    radial-gradient(ellipse 70% 60% at 50% 0%, rgba(201, 168, 76, 0.10) 0%, transparent 70%),
+    radial-gradient(ellipse 100% 80% at 50% 100%, rgba(9, 21, 35, 0.6) 0%, transparent 100%);
   pointer-events: none;
 }
 
@@ -65,7 +73,9 @@ body {
 .page-hero::after {
   content: '';
   position: absolute;
-  top: 0; left: 0; right: 0;
+  top: 0;
+  left: 0;
+  right: 0;
   height: 2px;
   background: linear-gradient(90deg, transparent, var(--gold-primary) 40%, var(--gold-primary) 60%, transparent);
 }
@@ -84,7 +94,7 @@ body {
   height: auto;
   margin-bottom: 36px;
   display: inline-block;
-  filter: brightness(1.1) drop-shadow(0 2px 24px rgba(201,168,76,0.25));
+  filter: brightness(1.1) drop-shadow(0 2px 24px rgba(201, 168, 76, 0.25));
 }
 
 /* Ornamental divider above eyebrow */
@@ -95,6 +105,7 @@ body {
   gap: 12px;
   margin-bottom: 20px;
 }
+
 .hero-ornament::before,
 .hero-ornament::after {
   content: '';
@@ -103,11 +114,14 @@ body {
   height: 1px;
   background: linear-gradient(90deg, transparent, var(--gold-primary));
 }
+
 .hero-ornament::after {
   background: linear-gradient(270deg, transparent, var(--gold-primary));
 }
+
 .hero-ornament-dot {
-  width: 5px; height: 5px;
+  width: 5px;
+  height: 5px;
   border-radius: 50%;
   background: var(--gold-primary);
   box-shadow: 0 0 8px var(--gold-primary);
@@ -169,19 +183,21 @@ body {
   transition: border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
-.legal-card:last-child { margin-bottom: 0; }
+.legal-card:last-child {
+  margin-bottom: 0;
+}
 
 .legal-card::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(201,168,76,0.03) 0%, transparent 50%);
+  background: linear-gradient(135deg, rgba(201, 168, 76, 0.03) 0%, transparent 50%);
   pointer-events: none;
 }
 
 .legal-card:hover {
   border-left-color: var(--gold-light);
-  box-shadow: 0 0 0 1px rgba(201,168,76,0.1), 0 8px 40px rgba(0,0,0,0.4);
+  box-shadow: 0 0 0 1px rgba(201, 168, 76, 0.1), 0 8px 40px rgba(0, 0, 0, 0.4);
 }
 
 /* Section counter badge */
@@ -205,8 +221,8 @@ body {
   font-size: 0.65rem;
   letter-spacing: 0.1em;
   color: var(--gold-primary);
-  background: rgba(201,168,76,0.1);
-  border: 1px solid rgba(201,168,76,0.2);
+  background: rgba(201, 168, 76, 0.1);
+  border: 1px solid rgba(201, 168, 76, 0.2);
   padding: 2px 8px;
   flex-shrink: 0;
   display: inline-block;
@@ -219,7 +235,9 @@ body {
   line-height: 1.85;
 }
 
-.legal-card p:last-child { margin-bottom: 0; }
+.legal-card p:last-child {
+  margin-bottom: 0;
+}
 
 .legal-card ul {
   list-style: none;
@@ -230,19 +248,23 @@ body {
 .legal-card ul li {
   position: relative;
   padding: 10px 0 10px 20px;
-  border-bottom: 1px solid rgba(26,51,82,0.6);
+  border-bottom: 1px solid rgba(26, 51, 82, 0.6);
   font-size: 0.94rem;
   color: var(--text-secondary);
   line-height: 1.7;
 }
 
-.legal-card ul li:last-child { border-bottom: none; }
+.legal-card ul li:last-child {
+  border-bottom: none;
+}
 
 .legal-card ul li::before {
   content: '';
   position: absolute;
-  left: 0; top: 18px;
-  width: 5px; height: 1px;
+  left: 0;
+  top: 18px;
+  width: 5px;
+  height: 1px;
   background: var(--gold-primary);
 }
 
@@ -271,7 +293,7 @@ body {
   margin-top: 20px;
   padding: 14px 16px;
   border-left: 2px solid var(--navy-muted);
-  background: rgba(255,255,255,0.02);
+  background: rgba(255, 255, 255, 0.02);
   line-height: 1.7;
 }
 
@@ -283,4 +305,421 @@ body {
   height: 1px;
   background: var(--gold-dim);
   margin: 60px auto 0;
+}
+
+/* ============================================================
+   COMMON SITE FOOTER
+   ============================================================ */
+
+.site-footer {
+  background-color: var(--navy-base);
+  border-top: 1px solid var(--navy-border);
+  padding: 80px 0 24px;
+  /* margin-top: 40px; */
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.footer-logo {
+  max-width: 50px;
+  height: auto;
+  margin-bottom: 20px;
+  filter: brightness(1.1);
+}
+
+.brand-col p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  max-width: 320px;
+}
+
+.footer-col h3 {
+  font-family: 'Sora', sans-serif;
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  margin-bottom: 24px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 14px;
+}
+
+.footer-col ul li:last-child {
+  margin-bottom: 0;
+}
+
+.footer-col a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.25s ease;
+}
+
+.footer-col a:hover {
+  color: var(--gold-primary);
+}
+
+.footer-bottom {
+  border-top: 1px solid var(--navy-border);
+  padding-top: 24px;
+  text-align: center;
+}
+
+.footer-bottom p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* Mobile Responsiveness for Footer */
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .brand-col p {
+    max-width: 100%;
+  }
+}
+
+/* ============================================================
+   COMMON SITE HEADER (STICKY)
+   ============================================================ */
+
+.site-header {
+  width: 100%;
+  padding: 15px 0;
+  /* Slightly reduced padding for a sleeker sticky look */
+
+  /* The magic properties to make it sticky */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  /* Ensures it stays above all other content */
+
+  /* Solid background so scrolling text doesn't bleed through */
+  background-color: rgba(9, 21, 35, 0.95);
+  /* Using var(--navy-base) with slight transparency */
+  backdrop-filter: blur(10px);
+  /* Adds a modern, premium blur effect to the background */
+  -webkit-backdrop-filter: blur(10px);
+
+  border-bottom: 1px solid var(--navy-border);
+  transition: all 0.3s ease;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  /* Add these lines to align the logo and menu with your page content */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.header-logo {
+  max-height: 45px;
+  width: auto;
+  filter: brightness(1.1);
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  font-family: 'Sora', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.nav-link:hover {
+  color: var(--gold-primary);
+}
+
+/* Underline hover effect for links */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: var(--gold-primary);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Contact Us Button */
+.nav-btn {
+  font-family: 'Sora', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--navy-deep);
+  background-color: var(--gold-primary);
+  padding: 10px 24px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-btn:hover {
+  background-color: var(--gold-light);
+  transform: translateY(-2px);
+}
+
+/* Mobile Menu Toggle (Hidden on Desktop) */
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+  padding: 5px;
+  z-index: 101;
+}
+
+.mobile-menu-toggle span {
+  display: block;
+  width: 25px;
+  height: 2px;
+  background-color: var(--gold-primary);
+  transition: 0.3s ease;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .mobile-menu-toggle {
+    display: flex;
+  }
+
+  .header-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--navy-card);
+    border-top: 1px solid var(--navy-border);
+    border-bottom: 1px solid var(--navy-border);
+    padding: 20px 0;
+    display: none;
+    /* Hidden by default on mobile */
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  }
+
+  .header-nav.active {
+    display: flex;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    align-items: center;
+  }
+}
+
+/* Align logo and title side-by-side */
+.header-logo-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  /* Space between the image and the text */
+  text-decoration: none;
+}
+
+/* Styling for the text title */
+.header-brand-title {
+  font-family: 'Sora', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  /* Prevents the name from stacking on two lines */
+}
+
+/* Optional: Make the text a bit smaller on mobile phones */
+@media (max-width: 768px) {
+  .header-brand-title {
+    font-size: 1.1rem;
+  }
+}
+
+/* Align logo and title container side-by-side */
+.header-logo-link {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  /* Space between logo image and text */
+  text-decoration: none;
+}
+
+/* Stack the title text on two lines */
+.header-brand-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Styling for "Sowmitras" */
+.title-top {
+  font-family: 'Sora', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+}
+
+/* Styling for "Technosoft Solutions" */
+.title-bottom {
+  font-family: 'Sora', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+}
+
+/* Make it slightly smaller on mobile devices so it fits well */
+@media (max-width: 768px) {
+  .title-top {
+    font-size: 1rem;
+  }
+
+  .title-bottom {
+    font-size: 1rem;
+  }
+}
+
+/* ============================================================
+   LIGHT THEME OVERRIDES
+   ============================================================ */
+
+/* When the html tag has data-theme="light", swap the variables */
+html[data-theme="light"] {
+  --navy-deep: #F4F7F6;
+  /* Light background */
+  --navy-base: #FFFFFF;
+  /* Header/Footer background */
+  --navy-card: #FFFFFF;
+  /* Card background */
+  --navy-border: #E2E8F0;
+  /* Light borders */
+  --navy-muted: #CBD5E1;
+  --gold-primary: #A3822E;
+  /* Slightly darker gold for contrast on light bg */
+  --gold-light: #C9A84C;
+  --gold-dim: #E8D5A3;
+  --text-primary: #0F172A;
+  /* Dark text */
+  --text-secondary: #334155;
+  --text-muted: #64748B;
+}
+
+/* Update sticky header background for light mode */
+html[data-theme="light"] .site-header {
+  background-color: rgba(255, 255, 255, 0.95);
+}
+
+/* Ensure smooth transitions when switching themes */
+body,
+.site-header,
+.legal-card,
+.site-footer {
+  transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+}
+
+/* Note: If your logo is white text, it will disappear on a white background. 
+   This filter inverts the logo to black in light mode. Remove if you use a colored logo! */
+html[data-theme="light"] .header-logo,
+html[data-theme="light"] .footer-logo {
+  filter: invert(1) hue-rotate(180deg) brightness(0.8);
+}
+
+/* ============================================================
+   THEME TOGGLE BUTTON STYLES
+   ============================================================ */
+
+.theme-toggle-btn {
+  background: transparent;
+  border: 1px solid var(--navy-border);
+  color: var(--text-primary);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.theme-toggle-btn:hover {
+  background-color: rgba(201, 168, 76, 0.1);
+  color: var(--gold-primary);
+  border-color: var(--gold-primary);
+}
+
+/* Handle Icon Visibility */
+.sun-icon {
+  display: none;
+}
+
+.moon-icon {
+  display: block;
+}
+
+/* Swap icons when light mode is active */
+html[data-theme="light"] .sun-icon {
+  display: block;
+}
+
+html[data-theme="light"] .moon-icon {
+  display: none;
 }
