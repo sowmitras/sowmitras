@@ -1,119 +1,286 @@
-/* Global Styles */
+/* ============================================================
+   SOWMITRAS TECHNOSOFT — PREMIUM CORPORATE STYLESHEET
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&display=swap');
+
+/* ── Reset & Base ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --navy-deep:    #050F1C;
+  --navy-base:    #091523;
+  --navy-card:    #0C1E30;
+  --navy-border:  #1A3352;
+  --navy-muted:   #1F3F5F;
+  --gold-primary: #C9A84C;
+  --gold-light:   #E8D5A3;
+  --gold-dim:     #8A6E2F;
+  --text-primary: #EEF3F8;
+  --text-secondary:#A8C0D8;
+  --text-muted:   #607D96;
+  --white:        #ffffff;
+}
+
+html { scroll-behavior: smooth; }
+
 body {
-    font-family: 'Inter', sans-serif;
-    background-color: #f4f7f6;
-    color: #333;
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
+  font-family: 'Sora', sans-serif;
+  background-color: var(--navy-deep);
+  color: var(--text-primary);
+  line-height: 1.75;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* Layout Containers */
+/* ── Layout ── */
 .page-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
 }
 
-.content-section {
-    padding: 60px 0;
-}
-
-.content-container {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-/* Hero Section */
+/* ── HERO ── */
 .page-hero {
-    padding: 80px 0;
-    text-align: center;
-    background-color: #0B1F33;
-    color: #ffffff;
-    border-radius: 12px;
-    margin-top: 20px;
+  position: relative;
+  padding: 100px 0 80px;
+  text-align: center;
+  overflow: hidden;
+  background: var(--navy-base);
+  border-bottom: 1px solid var(--navy-border);
+}
+
+/* Radial gold glow behind hero */
+.page-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 60% at 50% 0%, rgba(201,168,76,0.10) 0%, transparent 70%),
+    radial-gradient(ellipse 100% 80% at 50% 100%, rgba(9,21,35,0.6) 0%, transparent 100%);
+  pointer-events: none;
+}
+
+/* Thin gold rule at very top */
+.page-hero::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold-primary) 40%, var(--gold-primary) 60%, transparent);
 }
 
 .hero-inner {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 20px;
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Logo */
+.company-logo {
+  max-width: 160px;
+  height: auto;
+  margin-bottom: 36px;
+  display: inline-block;
+  filter: brightness(1.1) drop-shadow(0 2px 24px rgba(201,168,76,0.25));
+}
+
+/* Ornamental divider above eyebrow */
+.hero-ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.hero-ornament::before,
+.hero-ornament::after {
+  content: '';
+  flex: 1;
+  max-width: 80px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold-primary));
+}
+.hero-ornament::after {
+  background: linear-gradient(270deg, transparent, var(--gold-primary));
+}
+.hero-ornament-dot {
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: var(--gold-primary);
+  box-shadow: 0 0 8px var(--gold-primary);
 }
 
 .eyebrow {
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    font-size: 0.875rem;
-    font-weight: 600;
-    color: #4DA8DA;
-    display: block;
+  display: block;
+  font-family: 'Sora', sans-serif;
+  font-size: 0.70rem;
+  font-weight: 600;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--gold-primary);
+  margin-bottom: 20px;
 }
 
 .hero-title {
-    font-family: 'Outfit', sans-serif;
-    font-size: 2.5rem;
-    margin: 15px 0;
+  font-family: 'Sora', sans-serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+  margin-bottom: 24px;
+}
+
+.hero-title em {
+  font-style: italic;
+  color: var(--gold-light);
 }
 
 .hero-desc {
-    font-size: 1.1rem;
-    color: #b3c2d1;
-    margin-bottom: 0;
+  font-size: 1.05rem;
+  font-weight: 300;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.8;
 }
 
-/* Legal Cards */
+/* ── Content Section ── */
+.content-section {
+  padding: 72px 0 96px;
+}
+
+.content-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* ── Legal Cards ── */
 .legal-card {
-    background: #ffffff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    margin-bottom: 24px;
+  background: var(--navy-card);
+  border: 1px solid var(--navy-border);
+  border-left: 3px solid var(--gold-primary);
+  padding: 36px 40px;
+  margin-bottom: 20px;
+  position: relative;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
+.legal-card:last-child { margin-bottom: 0; }
+
+.legal-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(201,168,76,0.03) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.legal-card:hover {
+  border-left-color: var(--gold-light);
+  box-shadow: 0 0 0 1px rgba(201,168,76,0.1), 0 8px 40px rgba(0,0,0,0.4);
+}
+
+/* Section counter badge */
 .legal-card h2 {
-    font-family: 'Outfit', sans-serif;
-    color: #0B1F33;
-    margin-top: 0;
-    border-bottom: 1px solid #eaeaea;
-    padding-bottom: 10px;
+  font-family: 'Sora', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--navy-border);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  position: relative;
+}
+
+/* Extract the number from headings via pseudo — we style inline instead */
+.legal-card h2 .section-num {
+  font-family: 'Sora', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  color: var(--gold-primary);
+  background: rgba(201,168,76,0.1);
+  border: 1px solid rgba(201,168,76,0.2);
+  padding: 2px 8px;
+  flex-shrink: 0;
+  display: inline-block;
 }
 
 .legal-card p {
-    margin-bottom: 16px;
+  font-size: 0.96rem;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+  line-height: 1.85;
 }
 
-.legal-card p:last-child {
-    margin-bottom: 0;
-}
+.legal-card p:last-child { margin-bottom: 0; }
 
 .legal-card ul {
-    padding-left: 20px;
-    margin-bottom: 16px;
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 20px;
 }
 
-.legal-card li {
-    margin-bottom: 8px;
+.legal-card ul li {
+  position: relative;
+  padding: 10px 0 10px 20px;
+  border-bottom: 1px solid rgba(26,51,82,0.6);
+  font-size: 0.94rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
 }
 
-.legal-card li:last-child {
-    margin-bottom: 0;
+.legal-card ul li:last-child { border-bottom: none; }
+
+.legal-card ul li::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 18px;
+  width: 5px; height: 1px;
+  background: var(--gold-primary);
 }
 
 .legal-card strong {
-    color: #0B1F33;
+  font-weight: 600;
+  color: var(--gold-light);
 }
 
 .legal-card a {
-    color: #4DA8DA;
-    text-decoration: none;
+  color: var(--gold-primary);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s, color 0.2s;
 }
 
 .legal-card a:hover {
-    text-decoration: underline;
+  color: var(--gold-light);
+  border-bottom-color: var(--gold-light);
 }
 
+/* Legal note */
 .legal-note {
-    font-style: italic;
-    font-size: 0.95em;
-    color: #555;
+  font-style: italic;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin-top: 20px;
+  padding: 14px 16px;
+  border-left: 2px solid var(--navy-muted);
+  background: rgba(255,255,255,0.02);
+  line-height: 1.7;
+}
+
+/* ── Footer strip ── */
+.content-section::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 1px;
+  background: var(--gold-dim);
+  margin: 60px auto 0;
 }
